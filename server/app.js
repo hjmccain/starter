@@ -3,11 +3,14 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '..', 'build')));
+// Routes go here
 
-// Always return the main index.html, so react-router renders the route in the client
+// As default if no other routes catch a request,
+// always return the main index.html, so react-router renders the route in the client
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
+
+app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 module.exports = app;
