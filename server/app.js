@@ -3,6 +3,8 @@ const path = require('path');
 
 const app = express();
 
+// add bodyParser if you're gonna be parsing JSON!!!!
+
 // Routes go here
 
 // As default if no other routes catch a request,
